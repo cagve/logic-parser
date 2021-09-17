@@ -1,0 +1,148 @@
+{
+  "name": "lp",
+  "rules": {
+    "formula": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "atom"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unary_expression"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "open_par"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "formula"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "close_par"
+            }
+          ]
+        }
+      ]
+    },
+    "binary_expression": {
+      "type": "PREC_LEFT",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "formula"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "binary_operator"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "formula"
+          }
+        ]
+      }
+    },
+    "unary_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "unary_operator"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "open_par"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "formula"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "close_par"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "unary_operator"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "atom"
+            }
+          ]
+        }
+      ]
+    },
+    "binary_operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\\land"
+        },
+        {
+          "type": "STRING",
+          "value": "\\lor"
+        },
+        {
+          "type": "STRING",
+          "value": "\\to"
+        },
+        {
+          "type": "STRING",
+          "value": "\\leftrightarrow"
+        }
+      ]
+    },
+    "unary_operator": {
+      "type": "STRING",
+      "value": "\\lnot"
+    },
+    "atom": {
+      "type": "PATTERN",
+      "value": "[p-z]"
+    },
+    "open_par": {
+      "type": "STRING",
+      "value": "("
+    },
+    "close_par": {
+      "type": "STRING",
+      "value": ")"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+

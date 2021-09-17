@@ -1,0 +1,124 @@
+[
+  {
+    "type": "binary_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "formula",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "binary_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "formula",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "atom",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "close_par",
+          "named": true
+        },
+        {
+          "type": "formula",
+          "named": true
+        },
+        {
+          "type": "open_par",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unary_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "atom",
+          "named": true
+        },
+        {
+          "type": "close_par",
+          "named": true
+        },
+        {
+          "type": "formula",
+          "named": true
+        },
+        {
+          "type": "open_par",
+          "named": true
+        },
+        {
+          "type": "unary_operator",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\\land",
+    "named": false
+  },
+  {
+    "type": "\\leftrightarrow",
+    "named": false
+  },
+  {
+    "type": "\\lor",
+    "named": false
+  },
+  {
+    "type": "\\to",
+    "named": false
+  },
+  {
+    "type": "atom",
+    "named": true
+  },
+  {
+    "type": "close_par",
+    "named": true
+  },
+  {
+    "type": "open_par",
+    "named": true
+  },
+  {
+    "type": "unary_operator",
+    "named": true
+  }
+]

@@ -1,1 +1,1 @@
-p \land q
+p \land q \land q
