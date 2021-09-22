@@ -3,6 +3,14 @@
 * neovim nightly
 * treesitter
 
+## Funcionamiento
+### Comandos LaTeX
+* \\to
+* \\land
+* \\lor
+* \\lnot
+
+
 ## Versiones
 ### Versión 0.1:
  - Selecciono un trozo de texto (VisualMode)
