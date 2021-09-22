@@ -18,9 +18,9 @@ end
 local function get_math_formula(bufnr)
 	local formula = get_visual_text(bufnr)
 	formula = string.gsub(formula,"\\to", "→")
-	formula = string.gsub(formula,"\\land", "→")
-	formula = string.gsub(formula,"\\lor", "→")
-	formula = string.gsub(formula,"\\lnot", "→")
+	formula = string.gsub(formula,"\\land", "∧")
+	formula = string.gsub(formula,"\\lor", "∨")
+	formula = string.gsub(formula,"\\lnot", "¬")
 	return formula
 end
 
@@ -45,10 +45,11 @@ local function main()
 
 	if(api.nvim_eval('vimtex#syntax#in_mathzone()')==1)
 		then
-			local formula_buf = api.nvim_create_buf(false,false)                        -- Crea el buffer
+			local formula_buf = api.nvim_create_buf(false,true)                        -- Crea el buffer
 			api.nvim_buf_set_option(formula_buf, 'filetype', 'lp')                      -- Le asigna el tipo de archivo al buffer
-			api.nvim_buf_set_keymap(formula_buf, 'n', 'q', ':bw!<CR>', {silent=true}) -- Le asigna el keymap para cerrarlo
+			api.nvim_buf_set_keymap(formula_buf, 'n', 'q', ':bw!<CR>', {silent=true})   -- Le asigna el keymap para cerrarlo
 			api.nvim_command("normal vi$y")                                             -- Selecciona la fórmula
+			api.nvim_buf_set_option(formula_buf, 'modifiable', true)
 
 			-- Análisis
 			api.nvim_buf_set_lines(formula_buf,0,-1,false,{get_visual_text(bufnr)})     -- Escribe la fórmula TODO completion
@@ -62,6 +63,7 @@ local function main()
 			end
 
 			local win = api.nvim_open_win(formula_buf,true,options)                      -- Abrir ventana
+				
 			api.nvim_buf_set_option(formula_buf, 'modifiable', false)                    -- Le asigna la propiedad de no modificable
 		else
 			print("No estás en entorno matemático")
