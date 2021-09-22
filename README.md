@@ -1,34 +1,23 @@
-# PROJECTO ANALIZADOR SINTÁCTICO DE FÓRMULAS PROPOSICIONALES EN LATEX.
+# ANALIZADOR SINTÁCTICO DE FÓRMULAS EN LATEX.
 ## Requisitos
 * neovim nightly
 * treesitter
 
 ## Funcionamiento
 ### Comandos LaTeX
-* \\to
+* \\lnot
 * \\land
 * \\lor
-* \\lnot
+* \\to
+* \\leftrightarrow
 
+### Comandos
+**LPCheck**
+Comprueba si la fórmula introducida es una fórmula bien formada
 
-## Versiones
-### Versión 0.1:
- - Selecciono un trozo de texto (VisualMode)
- - Crea un nuevo buffer de tipo formula (lp)
- - Carga treesitter 
- - Si en el arbol hay algún nodo de error, entonces lanza el error
-
-TODO
- - Function `extract_formula`: extraer texto de visual mode a un nuevo buffer
- - Function `check_formula`: comprobar si el arbol tiene algun error
- - Function `pop_up_message`: Si hay errores devolver un pop up
-
-### Versión 0.2:
- - Extraer con tree-sitter cada fórmula de un documento latex
- - Comprobar que todas son correctas
-
-### Versión 0.n
- - Añadir FOL
+## TODO
+- [ ] Listener que se ejecute continuamente y si estás en entorno matemático compruebe si la fómula está bien formada
+- [ ] Parser para otras lógicas. FOL, modal, etc.
 
 ## Configuración de neovim
 1. Instalar la nueva gramática Tree-sitter [[https://github.com/nvim-treesitter/nvim-treesitter#adding-parsers]]
