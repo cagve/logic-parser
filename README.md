@@ -5,10 +5,13 @@
 
 ## Funcionamiento
 ### Comandos LaTeX
-* \\to
-* \\land
-* \\lor
-* \\lnot
+* \\lnot - ¬
+* \\land - ∧
+* \\lor - ∨
+* \\to - →
+* \\leftrightarrow - ↔ 
+
+	
 
 
 ## Versiones
